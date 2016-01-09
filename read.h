@@ -4,7 +4,7 @@
 #include<vector>
 #include"point.h"
 
-void read(string filename, vector<point> &data);
+void read(string filename, int dimention, vector<point> &data);
 
 
 #endif

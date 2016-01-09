@@ -16,7 +16,12 @@ class point{
 		point();
 		int getIndex();
 		vector<double> &getDimention();
+		int getCluster();
 		void AddDim(double in);
+};
+
+class center: public point{
+
 };
 
 

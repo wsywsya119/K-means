@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void read(string filename, vector<point> &data)
+void read(string filename, int dimention,vector<point> &data)
 {
 	ifstream input;
 	string line;
@@ -27,7 +27,7 @@ void read(string filename, vector<point> &data)
 			initial.AddDim(atof(word.c_str()));
 			//data[DataPoint].AddDim(atof(word.c_str()));
 			++Dim;
-			if(Dim==4)break;
+			if(Dim==dimention)break;
 		}
 		data.push_back(initial);
 
@@ -35,7 +35,6 @@ void read(string filename, vector<point> &data)
 		//cout<<endl;
 		
 	}
-
 
 	input.close();
 }

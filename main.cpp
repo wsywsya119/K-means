@@ -21,8 +21,10 @@ int main(int argc, char const *argv[])
 
 	vector<point> data;
 
-	read(Filename,data);
 
+	read(Filename,Dimention,data);
+
+	/*
 	for(int i=0;i<data.size();i++)
 	{
 		cout<<data[i].getIndex()<<" ";
@@ -34,4 +36,5 @@ int main(int argc, char const *argv[])
 		}
 		cout<<endl;
 	}
+	*/
 }

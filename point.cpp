@@ -22,6 +22,11 @@ vector<double> &point::getDimention()
 	return(dimention);
 }
 
+int point::getCluster()
+{
+	return(cluster);
+}
+
 void point::AddDim(double in)
 {
 	dimention.push_back(in);
