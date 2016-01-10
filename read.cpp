@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void read(string filename, int dimention,vector<point> &data)
+void read(string filename, int dimention,vector<dataPoint> &data)
 {
 	ifstream input;
 	string line;
@@ -20,7 +20,7 @@ void read(string filename, int dimention,vector<point> &data)
 		istringstream token(line);
 		string word;
 
-		point initial;
+		dataPoint initial;
 		while(getline(token,word,','))
 		{
 			//cout<<word<<endl;

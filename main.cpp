@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
 	int Dimention=atoi(argv[2]);
 	int AmountCluster=atoi(argv[3]);
 
-	vector<point> data;
+	vector<dataPoint> data;
 
 
 	read(Filename,Dimention,data);

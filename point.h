@@ -10,18 +10,30 @@ class point{
 	private:
 		int index;
 		vector<double> dimention;
-		int cluster;
-		static int amountPoint;
 	public:
 		point();
+		point(int i);
 		int getIndex();
+		void setIndex(int i);
 		vector<double> &getDimention();
-		int getCluster();
 		void AddDim(double in);
 };
 
-class center: public point{
+class centerPoint: public point{
+	private:
+		static int amountPoint;
+	public:
+		centerPoint();
+};
 
+class dataPoint: public point{
+	private:
+		static int amountPoint;
+		int cluster;
+		double distance;
+	public:
+		dataPoint();
+		int getCluster();
 };
 
 
