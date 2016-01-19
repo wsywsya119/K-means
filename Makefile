@@ -1,4 +1,4 @@
-SRCS:=main.cpp point.cpp read.cpp
+SRCS:=main.cpp point.cpp read.cpp K-means.cpp process.cpp
 OBJS:=$(SRCS:.cpp=.o)
 EXEC:=k-means
 CXX:=g++ -O6 -Wall

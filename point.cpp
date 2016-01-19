@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//point......
 point::point(){}
 point::point(int i)
 {
@@ -29,31 +30,74 @@ void point::AddDim(double in)
 	dimention.push_back(in);
 }
 
-
-
-
-int centerPoint::amountPoint=0;
-
-centerPoint::centerPoint()
+void point::clearDim()
 {
-	++amountPoint;
-	point(amountPoint);
+	dimention.clear();
+}
+
+void point::copyDimention(point &t, point &f)
+{
+	t.dimention = f.dimention;
+}
+
+void point::printInfo()
+{
+	cout<<index<<" ";
+	for(int i=0;i<(int)dimention.size();i++)
+	{
+		cout<<dimention[i]<<" ";
+	}
+	cout<<endl;
 }
 
 
+//centerPoint......
+int centerPoint::amountPoint=0;
 
+centerPoint::centerPoint():point(++amountPoint)
+{
+	amountDataPoint = 0;
+}
 
+int centerPoint::getAmountDataPoint()
+{
+	return(amountDataPoint);
+}
 
+void centerPoint::setAmountDataPoint(int d)
+{
+	amountDataPoint = d;
+}
+
+void centerPoint::addAmountDataPoint()
+{
+	++amountDataPoint;
+}
+
+//dataPoint......
 int dataPoint::amountPoint=0;
 
-dataPoint::dataPoint()
+dataPoint::dataPoint():point(++amountPoint)
 {
-	++amountPoint;
-	point(amountPoint);
 	cluster=0;
 }
 
 int dataPoint::getCluster()
 {
 	return(cluster);
+}
+
+void dataPoint::setCluster(int c)
+{
+	cluster = c;
+}
+
+double dataPoint::getDistance()
+{
+	return(distance);
+}
+
+void dataPoint::setDistance(double d)
+{
+	distance = d;
 }

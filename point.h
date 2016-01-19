@@ -13,17 +13,27 @@ class point{
 	public:
 		point();
 		point(int i);
+
 		int getIndex();
 		void setIndex(int i);
 		vector<double> &getDimention();
 		void AddDim(double in);
+		void clearDim();
+
+		void copyDimention(point &t, point &f);
+		void printInfo();
 };
 
 class centerPoint: public point{
 	private:
 		static int amountPoint;
+		int amountDataPoint;
 	public:
 		centerPoint();
+
+		int getAmountDataPoint();
+		void setAmountDataPoint(int d);
+		void addAmountDataPoint();
 };
 
 class dataPoint: public point{
@@ -33,7 +43,11 @@ class dataPoint: public point{
 		double distance;
 	public:
 		dataPoint();
+
 		int getCluster();
+		void setCluster(int c);
+		double getDistance();
+		void setDistance(double d);
 };
 
 

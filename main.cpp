@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include"point.h"
 #include"read.h"
+#include"K-means.h"
 
 using namespace std;
 
@@ -21,20 +22,15 @@ int main(int argc, char const *argv[])
 
 	vector<dataPoint> data;
 
-
 	read(Filename,Dimention,data);
 
+	Kmeans(data,Dimention,AmountCluster);
+
 	/*
-	for(int i=0;i<data.size();i++)
+	for(int i=0;i<(int)data.size();i++)
 	{
-		cout<<data[i].getIndex()<<" ";
-		vector<double> temp;
-		temp=data[i].getDimention();
-		for(int j=0;j<Dimention;j++)
-		{
-			cout<<temp[j]<<" ";
-		}
-		cout<<endl;
+		data[i].printInfo();
 	}
 	*/
+	
 }
