@@ -13,7 +13,7 @@ void random_initial(vector<centerPoint> &center, vector<dataPoint> &data, int am
 	{
 		ran=rand()%data.size();
 		centerPoint ini;
-		ini.copyDimention(ini,data[ran]);
+		ini.copyDimention(data[ran]);
 		center.push_back(ini);
 	}
 

@@ -16,24 +16,18 @@ void read(string filename, int dimention,vector<dataPoint> &data)
 	int Dim=0;
 	while(getline(input,line))
 	{
-		
 		istringstream token(line);
 		string word;
 
 		dataPoint initial;
 		while(getline(token,word,','))
 		{
-			//cout<<word<<endl;
-			initial.AddDim(atof(word.c_str()));
-			//data[DataPoint].AddDim(atof(word.c_str()));
+			initial.addDim(atof(word.c_str()));
 			++Dim;
 			if(Dim==dimention)break;
 		}
 		data.push_back(initial);
-
 		Dim=0;
-		//cout<<endl;
-		
 	}
 
 	input.close();

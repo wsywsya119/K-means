@@ -25,12 +25,5 @@ int main(int argc, char const *argv[])
 	read(Filename,Dimention,data);
 
 	Kmeans(data,Dimention,AmountCluster);
-
-	/*
-	for(int i=0;i<(int)data.size();i++)
-	{
-		data[i].printInfo();
-	}
-	*/
 	
 }

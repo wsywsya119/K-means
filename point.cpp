@@ -25,7 +25,7 @@ vector<double> &point::getDimention()
 	return(dimention);
 }
 
-void point::AddDim(double in)
+void point::addDim(double in)
 {
 	dimention.push_back(in);
 }
@@ -35,9 +35,9 @@ void point::clearDim()
 	dimention.clear();
 }
 
-void point::copyDimention(point &t, point &f)
+void point::copyDimention(point &f)
 {
-	t.dimention = f.dimention;
+	this->dimention = f.dimention;
 }
 
 void point::printInfo()

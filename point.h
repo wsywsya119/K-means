@@ -17,10 +17,10 @@ class point{
 		int getIndex();
 		void setIndex(int i);
 		vector<double> &getDimention();
-		void AddDim(double in);
+		void addDim(double in);
 		void clearDim();
 
-		void copyDimention(point &t, point &f);
+		void copyDimention(point &f);
 		void printInfo();
 };
 

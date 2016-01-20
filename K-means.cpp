@@ -9,17 +9,25 @@ void Kmeans(vector<dataPoint> &data, int dimention, int amountCluster)
 
 	random_initial(center,data,amountCluster);
 
+	double result=0,last=0;
 
-	int a=0;
-	while(a!=30)
+	while(1)
 	{
-		distance(data,center);
+		result = distance(data,center);
 		update_center(data,center,dimention);
-		++a;
+		if(last!=result)
+		{	
+			last = result;
+		}
+		else
+		{
+			break;
+		}
+		cout<<result<<endl;
 	}
 }
 
-void distance(vector<dataPoint> &data, vector<centerPoint> &center)
+double distance(vector<dataPoint> &data, vector<centerPoint> &center)
 {
 	vector<double> c_temp,d_temp;
 	double dis_temp = 0, dis = numeric_limits<double>::max();
@@ -44,11 +52,9 @@ void distance(vector<dataPoint> &data, vector<centerPoint> &center)
 			dis_temp=0;
 		}
 		result = result + data[i].getDistance();
-		//center[data[i].getCluster()-1].addAmountDataPoint();
 		dis = numeric_limits<double>::max();
 	}
-
-	cout<<result<<endl;
+	return(result);
 }
 
 void update_center(vector<dataPoint> &data, vector<centerPoint> &center, int dimention)
@@ -75,7 +81,7 @@ void update_center(vector<dataPoint> &data, vector<centerPoint> &center, int dim
 		center[i].clearDim();
 		for(int j=0;j<dimention;j++)
 		{
-			center[i].AddDim(dimDistance[i][j] / amount[i]);
+			center[i].addDim(dimDistance[i][j] / amount[i]);
 		}
 	}
 	
