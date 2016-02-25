@@ -9,4 +9,9 @@ using namespace std;
 
 void random_initial(vector<centerPoint> &center, vector<dataPoint> &data, int amountCluster);
 
+double distance(vector<dataPoint> &data, vector<centerPoint> &center);
+
+void update_center(vector<dataPoint> &data, vector<centerPoint> &center, int dimention);
+
+
 #endif
