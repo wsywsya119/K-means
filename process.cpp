@@ -56,15 +56,18 @@ double distance(vector<dataPoint> &data, vector<centerPoint> &center)
 void update_center(vector<dataPoint> &data, vector<centerPoint> &center, int dimention)
 {
 	vector< vector<double> > dimDistance(center.size(),vector<double>(dimention,0));
-
-	vector<int> amount(center.size(),0);
+	
+	for(int i=0;i<(int)center.size();i++)
+	center[i].setAmountDataPoint(0);
+	//vector<int> amount(center.size(),0);
 
 	vector<double> temp;
 
 	for(int i=0;i<(int)data.size();i++)
 	{
 		temp = data[i].getDimention();
-		++amount[data[i].getCluster()-1];
+		//++amount[data[i].getCluster()-1];
+		center[data[i].getCluster()-1].addAmountDataPoint();
 		for(int j=0;j<dimention;j++)
 		{
 			dimDistance[data[i].getCluster()-1][j] = dimDistance[data[i].getCluster()-1][j] + temp[j];
@@ -77,7 +80,8 @@ void update_center(vector<dataPoint> &data, vector<centerPoint> &center, int dim
 		center[i].clearDim();
 		for(int j=0;j<dimention;j++)
 		{
-			center[i].addDim(dimDistance[i][j] / amount[i]);
+			//center[i].addDim(dimDistance[i][j] / amount[i]);
+			center[i].addDim(dimDistance[i][j] / center[i].getAmountDataPoint());
 		}
 	}
 

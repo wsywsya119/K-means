@@ -56,7 +56,13 @@ int centerPoint::amountPoint=0;
 
 centerPoint::centerPoint():point(++amountPoint)
 {
+	this->setIndex(amountPoint);
 	amountDataPoint = 0;
+}
+
+int centerPoint::getAmountPoint()
+{
+	return(amountPoint);
 }
 
 int centerPoint::getAmountDataPoint()

@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stdlib.h>
+#include<iomanip>
 #include"point.h"
 #include"read.h"
 #include"K-means.h"
@@ -24,6 +25,8 @@ int main(int argc, char const *argv[])
 
 	read(Filename,Dimention,data);
 
+	cout<<setw(28)<<"========"<<setw(12)<<"K-means"<<setw(12)<<"========"<<endl;
 	Kmeans(data,Dimention,AmountCluster);
+	cout<<setw(28)<<"========"<<setw(12)<<"K-means"<<setw(12)<<"========"<<endl;
 	
 }

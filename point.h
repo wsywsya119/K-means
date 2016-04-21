@@ -31,6 +31,7 @@ class centerPoint: public point{
 	public:
 		centerPoint();
 
+		int getAmountPoint();
 		int getAmountDataPoint();
 		void setAmountDataPoint(int d);
 		void addAmountDataPoint();

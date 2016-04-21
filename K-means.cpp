@@ -1,5 +1,6 @@
 #include"K-means.h"
 #include"process.h"
+#include<iomanip>
 
 void Kmeans(vector<dataPoint> &data, int dimention, int amountCluster)
 {
@@ -21,7 +22,16 @@ void Kmeans(vector<dataPoint> &data, int dimention, int amountCluster)
 		{
 			break;
 		}
-		cout<<result<<endl;
+		cout<<"\033[1;12mSSE\033[0m:"<<setw(8)<<result<<" ";
+		cout.precision(6);
+		for(int i=0;i<(int)center.size();i++)
+		{
+		cout<<"\033[1;12mcluster_"<<center[i].getIndex()<<"\033[0m";
+		cout<<":"<<setw(3)<<center[i].getAmountDataPoint();
+		cout<<" points";
+		if(i<(int)center.size()-1)cout<<", ";
+		}
+		cout<<endl;
 	}
 }
 
