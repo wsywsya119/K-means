@@ -33,6 +33,7 @@ void Kmeans(vector<dataPoint> &data, int dimention, int amountCluster)
 		}
 		cout<<endl;
 	}
+
 }
 
 

@@ -4,6 +4,7 @@
 #include<time.h>
 #include<math.h>
 #include<limits>
+#include<iomanip>
 
 void random_initial(vector<centerPoint> &center, vector<dataPoint> &data, int amountCluster)
 {
@@ -86,4 +87,42 @@ void update_center(vector<dataPoint> &data, vector<centerPoint> &center, int dim
 	}
 
 }
+
+void correct_rate(vector<dataPoint> &data, int amountCluster)
+{
+	vector<int> cluster(amountCluster,0);
+
+	//cout<<"SIZE:"<<cluster.size()<<endl;
+
+	int type=0,temp=0,error=0;
+	for(int i=0;i<(int)data.size();i++)
+	{
+		cluster[data[i].getCluster()-1]++;
+		if((i+1)/50 != type)
+		{
+			cout<<"Type: "<<type+1<<" --> ";
+			for(int j=0;j<amountCluster;j++)
+			{
+				cout<<"\033[1;12mcluster_"<<j+1<<"\033[0m: "<<setw(3)<<cluster[j]<<"  ";
+				if(temp<cluster[j])temp=cluster[j];
+				cluster[j]=0;
+			}
+			cout<<endl;
+			error=error+(50-temp);
+			temp=0;
+		}
+		type=(i+1)/50;
+	}
+	cout<<"ERROR:"<<error<<endl;
+
+	double rate = (double)(data.size()-error)/(double)data.size();
+	cout<<"correct rate: "<<rate<<endl;
+}
+
+
+
+
+
+
+
 

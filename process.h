@@ -13,5 +13,6 @@ double distance(vector<dataPoint> &data, vector<centerPoint> &center);
 
 void update_center(vector<dataPoint> &data, vector<centerPoint> &center, int dimention);
 
+void correct_rate(vector<dataPoint> &data, int amountCluster);
 
 #endif

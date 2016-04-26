@@ -20,6 +20,16 @@ void point::setIndex(int i)
 	index=i;
 }
 
+void point::setClassName(string name)
+{
+	className=name;
+}
+
+string point::getClassName()
+{
+	return(className);
+}
+
 vector<double> &point::getDimention()
 {
 	return(dimention);

@@ -4,6 +4,7 @@
 #include"point.h"
 #include"read.h"
 #include"K-means.h"
+#include"process.h"
 
 using namespace std;
 
@@ -28,5 +29,17 @@ int main(int argc, char const *argv[])
 	cout<<setw(28)<<"========"<<setw(12)<<"K-means"<<setw(12)<<"========"<<endl;
 	Kmeans(data,Dimention,AmountCluster);
 	cout<<setw(28)<<"========"<<setw(12)<<"K-means"<<setw(12)<<"========"<<endl;
-	
+
+	/*
+	int m=1;
+	for(int i=0;i<(int)data.size();i++)                                                                
+	{
+		if((i/50)+1 != m)cout<<endl<<endl;
+		cout<<data[i].getIndex()<<": "<<data[i].getCluster()<<" ";
+		m=(i/50)+1;
+	}
+	cout<<endl;
+	*/
+
+	correct_rate(data,AmountCluster);
 }

@@ -2,6 +2,7 @@
 #define __POINT__H__
 
 #include<iostream>
+#include<string>
 #include<vector>
 
 using namespace std;
@@ -9,6 +10,7 @@ using namespace std;
 class point{
 	private:
 		int index;
+		string className;
 		vector<double> dimention;
 	public:
 		point();
@@ -16,6 +18,8 @@ class point{
 
 		int getIndex();
 		void setIndex(int i);
+		void setClassName(string name);
+		string getClassName();
 		vector<double> &getDimention();
 		void addDim(double in);
 		void clearDim();

@@ -24,7 +24,12 @@ void read(string filename, int dimention,vector<dataPoint> &data)
 		{
 			initial.addDim(atof(word.c_str()));
 			++Dim;
-			if(Dim==dimention)break;
+			if(Dim==dimention)
+			{
+				getline(token,word,',');
+				initial.setClassName(word);
+				break;
+			}
 		}
 		data.push_back(initial);
 		Dim=0;
